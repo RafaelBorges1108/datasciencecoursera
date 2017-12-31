@@ -12,6 +12,8 @@ The script was divided in 5 steps, as follows:
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
+##### Please, see CodeBook.md to obtain more details of the variables meaning
+
 Loading packages
 ```
 library(dplyr)
@@ -113,7 +115,7 @@ featuresNames <- names(dataset)
 featuresNames[2] <- "activity"
 featuresNames <- gsub("^t", "time", featuresNames)
 featuresNames <- gsub("^f", "frequency", featuresNames)
-featuresNames <- gsub("-", "\\.", featuresNames)
+featuresNames <- gsub("BodyBody", "Body", featuresNames)
 colnames(dataset) <- featuresNames
 ```
 
